@@ -1,0 +1,120 @@
+Student Performance Prediction
+Data Science- Internship Task 1
+
+  
+ 
+
+Ragini PS
+Submitted on 12-July 2026
+
+
+ 
+Abstract
+The project aims to predict the academic performance of students using demographic, educational, and examination-related features. The workflow covers data preprocessing, exploratory data analysis, feature engineering, model development, model evaluation, and comparison.
+Introduction
+Educational institutions can use predictive analytics to identify students who may require academic support. This project demonstrates an end-to-end machine learning pipeline for predicting student performance.
+Objectives
+•	Analyze the dataset.
+•	Clean and preprocess data.
+•	Perform exploratory data analysis.
+•	Feature Engineering and Selection
+•	Build regression models.
+•	Compare model performance.
+•	Predict math student score.
+Dataset Description
+The dataset contains student demographic information, parental education, lunch type, test preparation status, and mathematics, reading, and writing scores. Math score, is used as the prediction target.
+Tools and Technologies
+Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Jupyter Notebook.
+Methodology
+1.	Import libraries
+2. Load dataset
+3. Data cleaning and validation
+4. Exploratory Data Analysis
+5. Feature engineering
+6. Train-test split
+7. Train Linear Regression, Decision Tree, and Random Forest models
+8. Evaluate using MAE, MSE, RMSE, and R²
+9. Perform cross-validation and analyze feature importance.
+Data Cleaning & Preprocessing
+The dataset was first examined for missing values, duplicate records, and inconsistent column names. Since no missing values or significant data quality issues were identified, minimal preprocessing was required.
+Data: Student Performance Dataset
+
+Rows: 1000   Columns: 8   Missing Values:0   Duplicate values:0
+
+Preview of Dataset:
+Exploratory Data Analysis
+The notebook investigates score distributions, categorical relationships, and correlations. Reading and writing scores are strongly correlated, while mathematics shows comparatively lower averages. 
+Visualizations such as histograms, boxplots, pairplots, violin plots, count plots, and correlation heatmaps were used to identify trends and patterns.
+Categorical variables were transformed using Label Encoding, while numerical features were standardized using StandardScaler before training machine learning models.
+Preview after Encoding & Scaling:
+ 
+
+
+Heatmap showing Correlation between features:
+ 
+Impact of: Gender on scores – Bar Plot:               Impact of: Parental Education –Cat Plot:
+                                                                                                              
+Impact of: Lunch Type – Violin Plot:
+ 
+
+
+Distribution of scores – Pair Plot:
+ 
+ 
+Hist Plot:
+ 
+Feature Selection & Engineering
+
+Feature Engineering was done by creating a new feature, Average Score, to represent the overall academic performance of each student which helped in studying the patterns of student overall performance with all independent features.
+Selecting Features for train test split:
+On basis of correlation of features the relevant features were picked for building model.
+X(Independent Variable)   Gender, Parental Education, Lunch, Test Preparation, Race/Ethnicity, Reading Score and Writing Score.
+Y(Target) Math Score
+Model Development
+
+Three regression algorithms were implemented:
+•	Linear Regression 
+•	Decision Tree Regressor 
+•	Random Forest Regressor 
+The dataset was divided into training and testing sets using an 80:20 split, and model performance was evaluated using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and the coefficient of determination (R² Score).
+Linear Regression serves as the baseline model. Decision Tree captures nonlinear patterns. Random Forest improves prediction accuracy through ensemble learning.
+
+
+Results and Discussion
+Models are compared using regression metrics. Random Forest generally provides the highest predictive performance, while Linear Regression offers better interpretability.
+
+
+Key Findings
+•	Students who completed the test preparation course generally achieved higher average scores. 
+•	Reading and writing scores exhibited a strong positive correlation. 
+•	Female students demonstrated slightly higher average performance than male students. 
+•	Lunch type and parental education level showed measurable associations with student achievement. 
+•	The absence of significant outliers indicated that no additional outlier treatment as required. 
+ Model Evaluation scores:
+ 
+Model Performance comparison using Bar Chart
+ 
+MAE: Measures the average magnitude of prediction errors. 
+RMSE: Penalizes larger errors more heavily than MAE. 
+R² Score: Indicates how much variance in the target variable is explained by the model.
+Linear Regression Model has lowest RMSE and MSE. The score and R2score of linear regression model out performs Decision Tree Regressor and Random Forest Regressor with scores as:
+MAE :  0.273    MSE:  0.124    RMSE:  0.352    R2:  0.883    Cross Validation:  0.872
+Plotting Regression model with best fit line on predicted and actual values
+ 
+Residual Plot:
+ 
+
+
+Difference between Actual and Predicted Values:
+                        
+ 
+
+Conclusion
+The project successfully demonstrates a complete machine learning workflow for student performance prediction. The developed models can assist educational institutions in identifying learning trends and supporting data-driven academic interventions.
+Future Scope
+Incorporate additional student attributes, experiment with boosting algorithms such as XGBoost, optimize hyperparameters, and deploy the model as a web application.
+References
+1. Scikit-learn Documentation
+2. Pandas Documentation
+3. NumPy Documentation
+4. Matplotlib & Seaborn Documentation
